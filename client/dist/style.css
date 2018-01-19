@@ -167,7 +167,31 @@ h2 {
     float: right;
     text-align: center;
 }
+
 .title{
   color: grey,
   font-size: 18px
+}
+
+/*#zipCodeAsker, #zipCodeButton, .zipCodeDiv {
+  display: inline-block;
+  height: 100%;
+}*/
+
+
+/*#zipCodeAsker {
+  height: 30px;
+}*/
+
+.visible {
+  display: absolute;
+  height:30px;
+}
+
+#zipCodeButton {
+  display: absolute;
+}
+
+.invisible{
+  display: none;
 }

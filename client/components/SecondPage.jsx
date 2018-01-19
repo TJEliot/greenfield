@@ -23,8 +23,8 @@ class SecondPage extends React.Component {
         location: '',
         lat: '',
         lon: '',
-        zipcodeAsker: '',
-        zipcodebutton: '',
+        // zipcodeAsker: '',
+        // zipcodebutton: '',
         profile: ''
       }
       this.fetchProfileInfo = this.fetchProfileInfo.bind(this);
@@ -40,6 +40,7 @@ class SecondPage extends React.Component {
       console.log('we are trying to display the list');
 
     };
+
     weKnowTheLocation (pos) {
         var crd = pos.coords;
         console.log('Your current position is:');
@@ -55,9 +56,17 @@ class SecondPage extends React.Component {
     };
 
     errorHandler () {
-        this.setState({zipcodeAsker: (<input id="ourZip" placeholder="zipcode" value={this.state.zipcodes} onChange={this.getZipcode}></input>)});
-        this.setState({zipcodebutton: (<button id="meetupRequest" onClick={this.getMeetups}>Find MeetUps</button>)});
+        // this.setState({zipcodeAsker: (<input id="ourZip" placeholder="zipcode" value={this.state.zipcodes} onChange={this.getZipcode}></input>)});
+        // this.setState({zipcodebutton: (<button id="meetupRequest" onClick={this.getMeetups}>Find MeetUps</button>)});
+        $("#zipCodeAsker").removeClass("invisible");
+        $("#zipCodeButton").removeClass("invisible");
+        // $("zipCodeDiv").removeClass("invisible");
+        $("#zipCodeAsker").addClass("visible");
+        $("#zipCodeButton").addClass("visible");
+
+        // $("zipCodeDiv").addClass("visible");
       };
+
     fetchProfileInfo() {
       console.log('im in fetching?')
       $.ajax({
@@ -74,6 +83,7 @@ class SecondPage extends React.Component {
       }
     });
     }
+
     componentDidMount() {
       var options = {
         enableHighAccuracy: false,
@@ -111,9 +121,6 @@ class SecondPage extends React.Component {
           this.setState({events: meetups.events});
           console.log(meetups.events);});
           this.displayList();
-        //now we should call the function to plot the meetups on the map
-        //and also populate the list with meetup descriptions
-        //console.log(JSON.parse(meetups));});
     }
 
 
@@ -128,8 +135,9 @@ class SecondPage extends React.Component {
       <Link className="btn" to={{pathname:'/profile'}}>{this.state.profile.username}'s profile</Link>
       </h1>
       </div>
-      <div className="askForZipCode">{this.state.zipcodeAsker}</div>
-      <div>{this.state.zipcodebutton}</div>
+      <div id="zipCodeDiv" className="visible">
+      <textArea id="zipCodeAsker" className="invisible" placeholder="What is your zip code?"></textArea><button id="zipCodeButton" className="invisible">Look up nearby meetups</button>
+      </div>
       <div className="map">
       <div>
        <MapContainer meetups={this.state.events}

@@ -66,4 +66,4 @@ class MeetupMap extends React.Component {
   }
 }
 
-export default MeetupMap;
+export default MeetupMap; 
