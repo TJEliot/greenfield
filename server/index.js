@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 const path = require('path');
 const fs = require('fs');
 const $ = require('jquery')
-const config = require('./config.js');
+//const config = require('./config.js');
 const app = express();
 require('../passport.js')(passport);
 app.use(bodyParser.urlencoded({ extended: true }))
