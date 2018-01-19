@@ -3,6 +3,8 @@ import { GoogleApiWrapper } from 'google-maps-react';
 import MeetupMap from './MeetupMap.jsx';
 // import config from '../../config.js';
 const MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY;
+console.log(MAPS_API_KEY);
+//const MEETUPS_API_KEY = process.env.MEETINGS_API_KEY;
 
 class MapContainer extends React.Component {
   render() {
