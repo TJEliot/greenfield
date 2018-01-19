@@ -1,11 +1,11 @@
 var knex = require('knex')({
   client: 'pg',
   connection: {
-    host     : 'localhost',
+    host     : 'ec2-107-21-236-219.compute-1.amazonaws.com',
     port     : '5432',
-    user     : 'tepig',
-    password : '',
-    database: 'meetup',
+    user     : 'cbynyfyzqijang',
+    password : '8c6297aa7776b22a621ccd662335336cc9425d6e6af1522f0e865c78c0c14190',
+    database : 'd5ho0tp7qdq1dd',
     charset  : 'utf8'
   }
 });
